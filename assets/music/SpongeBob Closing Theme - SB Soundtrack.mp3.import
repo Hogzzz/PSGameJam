@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bav55ejdfjupk"
+path="res://.godot/imported/SpongeBob Closing Theme - SB Soundtrack.mp3-4cb0ce324fa66bbef6735b7a3181a9b7.mp3str"
+
+[deps]
+
+source_file="res://assets/music/SpongeBob Closing Theme - SB Soundtrack.mp3"
+dest_files=["res://.godot/imported/SpongeBob Closing Theme - SB Soundtrack.mp3-4cb0ce324fa66bbef6735b7a3181a9b7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
