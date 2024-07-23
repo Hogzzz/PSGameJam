@@ -549,7 +549,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(17, -356)
 motion_scale = Vector2(0.9, 0.9)
 motion_offset = Vector2(50, 50)
-motion_mirroring = Vector2(275.08, 0)
+motion_mirroring = Vector2(275.08, 154.665)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(2, -7)
@@ -558,7 +558,7 @@ texture = ExtResource("6_wosd7")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(16, -360)
-motion_mirroring = Vector2(275.08, 0)
+motion_mirroring = Vector2(275.08, 155.29)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(92, -5)
