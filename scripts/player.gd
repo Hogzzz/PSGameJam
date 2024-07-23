@@ -56,8 +56,8 @@ func _physics_process(delta):
 			animated_sprite.play("Run")
 	else:
 		animated_sprite.play("Jump")
-		animated_sprite.play("Fall")
-
+		if velocity.y > 0:
+			animated_sprite.play("Fall")
 	
 	# Apply movement
 	if direction:
