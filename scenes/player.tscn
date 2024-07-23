@@ -95,7 +95,7 @@ animations = [{
 size = Vector2(6.75, 12.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t8rd"]
-radius = 11.0454
+radius = 9.05539
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -105,7 +105,7 @@ script = ExtResource("1_f5sxs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_2kbmo")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -115,10 +115,22 @@ shape = SubResource("RectangleShape2D_3hqxo")
 [node name="player hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player hitbox"]
-position = Vector2(0, -7)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_6t8rd")
+
+[node name="Attack Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Death" type="Timer" parent="."]
+one_shot = true
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="area_entered" from="player hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_exited" from="player hitbox" to="." method="_on_player_hitbox_area_exited"]
 [connection signal="body_entered" from="player hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="Attack Cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="Death" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]

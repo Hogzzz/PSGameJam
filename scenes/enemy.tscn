@@ -1,7 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bcbbmcc32x0t0"]
 
 [ext_resource type="Texture2D" uid="uid://oe0gdhixjvtl" path="res://assets/sprites/slime_green.png" id="1_ctw0o"]
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_iewte"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kangl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gco8t"]
+radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q2yu"]
 atlas = ExtResource("1_ctw0o")
@@ -40,13 +43,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nl8vr"]
-radius = 14.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gco8t"]
-radius = 4.0
+radius = 25.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_iewte")
+script = ExtResource("1_kangl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_gco8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -64,12 +68,9 @@ target_position = Vector2(-7, 0)
 
 [node name="Hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_nl8vr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_gco8t")
-
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

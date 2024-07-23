@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://p77lnhowfgn"]
+[gd_scene load_steps=13 format=3 uid="uid://p77lnhowfgn"]
 
 [ext_resource type="Texture2D" uid="uid://bexhknwyyy8hp" path="res://assets/sprites/world_tileset.png" id="2_bdv3h"]
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="3_b2tuq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dsq754f46kprw" path="res://assets/sprites/BackgroundMoon.png" id="6_wosd7"]
 [ext_resource type="Texture2D" uid="uid://cd2rxfm2j3os" path="res://assets/sprites/BackgroundPillars.png" id="7_hvp0h"]
 [ext_resource type="PackedScene" uid="uid://bcbbmcc32x0t0" path="res://scenes/enemy.tscn" id="7_o331u"]
+[ext_resource type="Script" path="res://scripts/global.gd" id="8_1myhi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i56ve"]
 texture = ExtResource("2_bdv3h")
@@ -565,4 +566,7 @@ position = Vector2(320, 0)
 texture = ExtResource("7_hvp0h")
 
 [node name="Slime" parent="." instance=ExtResource("7_o331u")]
-position = Vector2(77, -355)
+position = Vector2(67, -356)
+
+[node name="Global" type="Node2D" parent="."]
+script = ExtResource("8_1myhi")
