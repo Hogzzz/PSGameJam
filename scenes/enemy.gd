@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 const SPEED = 60
 
@@ -21,3 +21,7 @@ func _process(delta):
 	
 func enemy():
 	pass
+
+
+func _on_hitbox_body_entered(body):
+	pass # Replace with function body.

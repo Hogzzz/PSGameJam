@@ -15,12 +15,9 @@ run/main_scene="res://scenes/MainScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Music="*res://scenes/music.tscn"
-
 [display]
 
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [importer_defaults]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhivd23kfp46v" path="res://scenes/platform.tscn" id="3_38811"]
 [ext_resource type="PackedScene" uid="uid://epyh0oluin2s" path="res://scenes/coin.tscn" id="4_7eg5q"]
 [ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://scenes/killzone.tscn" id="5_xubtd"]
-[ext_resource type="PackedScene" uid="uid://bcbbmcc32x0t0" path="res://scenes/slime.tscn" id="6_atyi8"]
+[ext_resource type="PackedScene" uid="uid://bcbbmcc32x0t0" path="res://scenes/enemy.tscn" id="6_atyi8"]
 [ext_resource type="FontFile" uid="uid://chwtdfvix6oac" path="res://assets/fonts/PixelOperator8.ttf" id="7_8guje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i56ve"]
