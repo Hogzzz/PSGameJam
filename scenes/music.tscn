@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dytmra2p5slfx"]
+
+[ext_resource type="AudioStream" uid="uid://bav55ejdfjupk" path="res://assets/music/SpongeBob Closing Theme - SB Soundtrack.mp3" id="1_r1p3q"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+position = Vector2(-41, -39)
+scale = Vector2(155.206, -35.9737)
+stream = ExtResource("1_r1p3q")
+pitch_scale = 0.65
+autoplay = true
+max_distance = 1e+08
+panning_strength = 0.0
+bus = &"Music"
