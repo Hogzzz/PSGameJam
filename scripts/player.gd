@@ -16,7 +16,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var death = $Death
 @onready var global = $"../Global"
 
-
 func _physics_process(delta):
 	enemy_attack()
 	attack()
