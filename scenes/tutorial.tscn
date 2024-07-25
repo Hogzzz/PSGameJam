@@ -119,7 +119,8 @@ layer_1/tile_data = PackedInt32Array(65534, 0, 0, 65535, 65536, 0, 0, 65536, 0, 
 position = Vector2(3, -5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+position = Vector2(0, -59)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_diyrj")
@@ -147,7 +148,6 @@ texture = SubResource("GradientTexture2D_pns7o")
 [node name="PointLight2D3" type="PointLight2D" parent="Lights"]
 position = Vector2(740, 129)
 rotation = -0.716687
-scale = Vector2(1, 1)
 texture = SubResource("GradientTexture2D_pns7o")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights"]
