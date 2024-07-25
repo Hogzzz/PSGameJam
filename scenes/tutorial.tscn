@@ -120,7 +120,6 @@ layer_1/tile_data = PackedInt32Array(65534, 393216, 0, 65535, 65536, 0, 0, 65536
 position = Vector2(3, -5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.75, 2.75)
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_diyrj")
