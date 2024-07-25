@@ -14,11 +14,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var death = $Death
-@onready var global = $"../Global"
 
 func _physics_process(delta):
-	enemy_attack()
-	attack()
+
 	# Death Actions
 	if health <=0:
 		player_alive = false
@@ -67,45 +65,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
-func player():
-	pass
-
-
-func enemy_attack():
-	if enemy_inattack_range and enemy_cooldown == true:
-		health = health - 20
-		enemy_cooldown = false
-		$"Attack Cooldown".start()
-		print("ouch")
-
-func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
-
-
-func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
-		
-
-
-
-func _on_attack_cooldown_timeout():
-	enemy_cooldown = true
-	
 func _on_timer_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
 
-func attack():
-	if Input.is_action_just_pressed("Attack"):
-		global.player_current_attack = true
-		attack_ip = true
-		animated_sprite.play("Attack")
-		$deal_attack_timer.start()
-
-
-func _on_deal_attack_timer_timeout():
-	$deal_attack_timer.stop()
-	global.player_current_attack = false
-	attack_ip = false
