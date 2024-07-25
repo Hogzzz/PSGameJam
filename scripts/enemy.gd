@@ -1,5 +1,4 @@
 extends CharacterBody2D
-@onready var global = $"../Global"
 const SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
@@ -20,29 +19,9 @@ func _process(delta):
 		animated_sprite.flip_h = false
 		
 	position.x += direction * SPEED * delta
-	deal_with_damage()
 	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-func enemy():
-	pass
-
-
-func _on_hitbox_body_entered(body):
-	if body.has_method("player"):
-		player_inattack_zone = true
-
-
-func _on_hitbox_body_exited(body):
-	if body.has_method("player"):
-		player_inattack_zone = false
-
-func deal_with_damage():
-	if player_inattack_zone and global.player_curent_attack == true:
-		health = health - 50
-		print("slime health = ", health)
-		if health <= 0:
-			self.queue_free()

@@ -1,7 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://gxvn73yvhmp6"]
 
-[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_6x7u5"]
-[ext_resource type="Texture2D" uid="uid://tgwmneueugfu" path="res://images/bgimg.JPG" id="2_fictq"]
+[ext_resource type="Texture2D" uid="uid://tgwmneueugfu" path="res://images/bgimg.JPG" id="1_7utfi"]
+
+[sub_resource type="GDScript" id="GDScript_y1inm"]
+script/source = "extends Control
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/Game.tscn\")
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/OptionsMenu.tscn\")
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6x7u5")
+script = SubResource("GDScript_y1inm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -32,7 +46,7 @@ scale = Vector2(3.31826, 2.86854)
 [node name="backgroundimage" type="Sprite2D" parent="MarginContainer"]
 position = Vector2(28.9536, 50.1787)
 scale = Vector2(0.111881, 0.117811)
-texture = ExtResource("2_fictq")
+texture = ExtResource("1_7utfi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bexhknwyyy8hp" path="res://assets/sprites/world_tileset.png" id="2_bdv3h"]
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="3_b2tuq"]
-[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://scenes/player.tscn" id="3_et27s"]
-[ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://scenes/killzone.tscn" id="4_haqvg"]
+[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://Slungeon Scenes/player.tscn" id="3_et27s"]
+[ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://Slungeon Scenes/killzone.tscn" id="4_haqvg"]
 [ext_resource type="Texture2D" uid="uid://dsq754f46kprw" path="res://assets/sprites/BackgroundMoon.png" id="6_wosd7"]
 [ext_resource type="Texture2D" uid="uid://cd2rxfm2j3os" path="res://assets/sprites/BackgroundPillars.png" id="7_hvp0h"]
-[ext_resource type="PackedScene" uid="uid://bcbbmcc32x0t0" path="res://scenes/enemy.tscn" id="7_o331u"]
+[ext_resource type="PackedScene" path="res://other scenes/enemy.tscn" id="7_o331u"]
 [ext_resource type="Script" path="res://scripts/global.gd" id="8_1myhi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i56ve"]
