@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkkhxce0e3xt4"]
 
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_m8oyd"]
-[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://scenes/player.tscn" id="2_ljle3"]
+[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://Slungeon Scenes/player.tscn" id="2_ljle3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uidjp"]
 texture = ExtResource("1_m8oyd")

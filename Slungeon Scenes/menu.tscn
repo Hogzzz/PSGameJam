@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://gxvn73yvhmp6"]
+[gd_scene load_steps=5 format=3 uid="uid://gxvn73yvhmp6"]
 
-[ext_resource type="Texture2D" uid="uid://tgwmneueugfu" path="res://images/bgimg.JPG" id="1_7utfi"]
+[ext_resource type="Texture2D" uid="uid://cnnxb3jcyttvt" path="res://assets/sprites/MenuBackground.png" id="1_53qj0"]
+[ext_resource type="PackedScene" uid="uid://c4sl3knn10jdv" path="res://Slungeon Scenes/settingsbutton.tscn" id="2_lo48k"]
+[ext_resource type="PackedScene" uid="uid://wt78sidbgh73" path="res://Slungeon Scenes/SettingsWindow.tscn" id="3_qbs12"]
 
 [sub_resource type="GDScript" id="GDScript_y1inm"]
 script/source = "extends Control
+@onready var window = $Window
+
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/Game.tscn\")
-
-func _on_options_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/OptionsMenu.tscn\")
+	get_tree().change_scene_to_file(\"res://Slungeon Scenes/tutorial.tscn\")
 
 
-func _on_quit_pressed():
+func _on_exit_pressed():
 	get_tree().quit()
+
+
+
+
 "
 
 [node name="Menu" type="Control"]
@@ -26,42 +31,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_y1inm")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.22229, -1)
+scale = Vector2(3.68333, 3.74444)
+texture = ExtResource("1_53qj0")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -687.0
-offset_top = -484.0
-offset_right = -617.0
-offset_bottom = -383.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.31826, 2.86854)
-
-[node name="backgroundimage" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(28.9536, 50.1787)
-scale = Vector2(0.111881, 0.117811)
-texture = ExtResource("1_7utfi")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Play" type="Button" parent="."]
 layout_mode = 2
+offset_left = -118.0
+offset_top = 53.0
+offset_right = 109.0
+offset_bottom = 162.0
+text = "
+"
+flat = true
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="."]
 layout_mode = 2
-text = "Play"
+offset_left = -115.0
+offset_top = 179.0
+offset_right = 108.0
+offset_bottom = 277.0
+text = "
+"
+flat = true
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Options"
+[node name="Settings" parent="." instance=ExtResource("2_lo48k")]
+layout_mode = 0
+offset_left = 521.0
+offset_top = -310.0
+offset_right = 565.0
+offset_bottom = -266.0
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+[node name="Window" parent="." instance=ExtResource("3_qbs12")]
+visible = false
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="close_requested" from="Window" to="Settings" method="_on_window_close_requested"]

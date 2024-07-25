@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4sl3knn10jdv"]
+
+[ext_resource type="Script" path="res://scripts/settingsbutton.gd" id="1_aejbl"]
+[ext_resource type="Texture2D" uid="uid://bmu8yo2m67kk0" path="res://assets/sprites/SettingsButton.png" id="1_n1weu"]
+
+[node name="Settings" type="Button"]
+offset_left = -22.0
+offset_top = -23.0
+offset_right = 22.0
+offset_bottom = 21.0
+flat = true
+script = ExtResource("1_aejbl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(15.0001, 25)
+scale = Vector2(2.60526, 2.60526)
+texture = ExtResource("1_n1weu")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
