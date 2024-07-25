@@ -1,11 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkkhxce0e3xt4"]
+[gd_scene load_steps=5 format=3 uid="uid://dkkhxce0e3xt4"]
 
-[ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_m8oyd"]
-[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://scenes/player.tscn" id="2_ljle3"]
-[ext_resource type="PackedScene" uid="uid://bcbbmcc32x0t0" path="res://scenes/enemy.tscn" id="3_kprtm"]
+[ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_guqnq"]
+[ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://Slungeon Scenes/player.tscn" id="2_rhadj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uidjp"]
-texture = ExtResource("1_m8oyd")
+texture = ExtResource("1_guqnq")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -84,21 +83,9 @@ layer_0/tile_data = PackedInt32Array(65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 6553
 layer_1/name = "background"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Player" parent="." instance=ExtResource("2_ljle3")]
+[node name="Player" parent="." instance=ExtResource("2_rhadj")]
 position = Vector2(-50, -5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -38)
 zoom = Vector2(3, 3)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_kprtm")]
-position = Vector2(658, 0)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("3_kprtm")]
-position = Vector2(677, 0)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("3_kprtm")]
-position = Vector2(696, 0)
-
-[node name="CharacterBody2D4" parent="." instance=ExtResource("3_kprtm")]
-position = Vector2(711, 0)

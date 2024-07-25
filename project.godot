@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="JamEntry"
-run/main_scene="res://scenes/lvl1.tscn"
+run/main_scene="res://Slungeon Scenes/lvl1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://scripts/global.gd"
 
 [display]
 
