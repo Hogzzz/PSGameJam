@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 var enemy_inattack_range = false
 var enemy_cooldown = true
 var health = 100
