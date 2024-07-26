@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhtjh7smfumsm"]
+
+[ext_resource type="Texture2D" uid="uid://xjv5niaw5sxr" path="res://assets/sprites/SettingsBackground.png" id="1_jn0ei"]
+[ext_resource type="FontFile" uid="uid://chwtdfvix6oac" path="res://assets/fonts/PixelOperator8.ttf" id="2_gfvb4"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -90.0
+offset_right = -50.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(75.5, 90.5)
+scale = Vector2(0.95, 0.838)
+texture = ExtResource("1_jn0ei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -131.0
+offset_top = -15.0
+offset_right = 113.0
+offset_bottom = 73.0
+scale = Vector2(1.705, 1.705)
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gfvb4")
+theme_override_font_sizes/font_size = 16
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gfvb4")
+theme_override_font_sizes/font_size = 32
+text = "Quit Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -73.0
+offset_top = -71.0
+offset_right = 228.0
+offset_bottom = -23.0
+theme_override_fonts/font = ExtResource("2_gfvb4")
+theme_override_font_sizes/font_size = 32
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = -46.0
+offset_top = 114.0
+offset_right = 354.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("2_gfvb4")
+theme_override_font_sizes/font_size = 32
+text = "Window Settings"
+horizontal_alignment = 1

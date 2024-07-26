@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkdhgfln7tqkf"]
+[gd_scene load_steps=17 format=3 uid="uid://dkdhgfln7tqkf"]
 
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_456m3"]
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_jks4h"]
 [ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://Slungeon Scenes/player.tscn" id="2_xqo73"]
 [ext_resource type="AudioStream" uid="uid://bcgnjswiu8usd" path="res://assets/sounds/footstep.wav" id="3_a3s8p"]
+[ext_resource type="Texture2D" uid="uid://bmu8yo2m67kk0" path="res://assets/sprites/SettingsButton.png" id="3_nd8yf"]
 [ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://Slungeon Scenes/killzone.tscn" id="4_i0g7m"]
 [ext_resource type="Texture2D" uid="uid://dsq754f46kprw" path="res://assets/sprites/BackgroundMoon.png" id="5_yx0g4"]
 [ext_resource type="Texture2D" uid="uid://cd2rxfm2j3os" path="res://assets/sprites/BackgroundPillars.png" id="6_wxd4q"]
@@ -91,6 +93,7 @@ fill_from = Vector2(0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_3mf7m"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_456m3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xkpuf")
@@ -106,6 +109,15 @@ position = Vector2(326, 1)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -42)
 zoom = Vector2(2.75, 2.75)
+
+[node name="Button" type="Button" parent="Player/Camera2D"]
+offset_left = 174.0
+offset_top = -115.0
+offset_right = 208.0
+offset_bottom = -88.0
+focus_mode = 0
+icon = ExtResource("3_nd8yf")
+flat = true
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_a3s8p")
@@ -222,3 +234,5 @@ texture = ExtResource("6_wxd4q")
 position = Vector2(445, 261)
 scale = Vector2(0.877431, 1.45)
 texture = ExtResource("6_wxd4q")
+
+[connection signal="pressed" from="Player/Camera2D/Button" to="." method="_on_button_pressed"]
