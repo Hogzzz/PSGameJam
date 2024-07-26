@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://gxvn73yvhmp6"]
+
+[ext_resource type="Texture2D" uid="uid://cnnxb3jcyttvt" path="res://assets/sprites/MenuBackground.png" id="1_53qj0"]
+[ext_resource type="PackedScene" uid="uid://dfanfrecfxqny" path="res://Slungeon Scenes/pause_menu.tscn" id="4_pscme"]
+
+[sub_resource type="GDScript" id="GDScript_y1inm"]
+script/source = "extends Control
+
+@onready var pause_menu = $\"Pause Menu\"
+
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file(\"res://Slungeon Scenes/tutorial.tscn\")
+
+
+func _on_exit_pressed():
+	get_tree().quit()
+
+
+func _on_button_pressed():
+	pause_menu.show()
+"
+
+[node name="Load Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_y1inm")
+
+[node name="Pause Menu" parent="." instance=ExtResource("4_pscme")]
+visible = false
+layout_mode = 1
+offset_left = 329.021
+offset_top = -51.4309
+offset_right = 329.021
+offset_bottom = -51.4309
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(581.333, 327)
+scale = Vector2(3.68333, 3.74444)
+texture = ExtResource("1_53qj0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579.111, 328)
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 461.111
+offset_top = 381.0
+offset_right = 688.111
+offset_bottom = 490.0
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 463.111
+offset_top = 507.0
+offset_right = 686.111
+offset_bottom = 605.0
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

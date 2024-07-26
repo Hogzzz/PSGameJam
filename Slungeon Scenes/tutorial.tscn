@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkdhgfln7tqkf"]
+[gd_scene load_steps=18 format=3 uid="uid://dkdhgfln7tqkf"]
 
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_jks4h"]
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_srpee"]
 [ext_resource type="PackedScene" uid="uid://cddsvl5pnv2ex" path="res://Slungeon Scenes/player.tscn" id="2_xqo73"]
 [ext_resource type="AudioStream" uid="uid://bcgnjswiu8usd" path="res://assets/sounds/footstep.wav" id="3_a3s8p"]
 [ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://Slungeon Scenes/killzone.tscn" id="4_i0g7m"]
 [ext_resource type="Texture2D" uid="uid://dsq754f46kprw" path="res://assets/sprites/BackgroundMoon.png" id="5_yx0g4"]
 [ext_resource type="Texture2D" uid="uid://cd2rxfm2j3os" path="res://assets/sprites/BackgroundPillars.png" id="6_wxd4q"]
-[ext_resource type="PackedScene" uid="uid://c4sl3knn10jdv" path="res://Slungeon Scenes/settingsbutton.tscn" id="7_j7oni"]
-[ext_resource type="PackedScene" uid="uid://wt78sidbgh73" path="res://Slungeon Scenes/SettingsWindow.tscn" id="8_hc6gr"]
+[ext_resource type="PackedScene" uid="uid://dfanfrecfxqny" path="res://Slungeon Scenes/pause_menu.tscn" id="6_xtlh3"]
+[ext_resource type="Texture2D" uid="uid://bmu8yo2m67kk0" path="res://assets/sprites/SettingsButton.png" id="9_8wort"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqxcf"]
 texture = ExtResource("1_jks4h")
@@ -93,6 +94,7 @@ fill_from = Vector2(0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_3mf7m"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_srpee")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xkpuf")
@@ -109,15 +111,26 @@ position = Vector2(326, 1)
 position = Vector2(0, -42)
 zoom = Vector2(2.75, 2.75)
 
-[node name="Settings" parent="Player/Camera2D" instance=ExtResource("7_j7oni")]
-offset_left = 158.0
-offset_top = -111.0
-offset_right = 185.0
-offset_bottom = -81.0
-size_flags_horizontal = 8
-
-[node name="Window" parent="Player/Camera2D" instance=ExtResource("8_hc6gr")]
+[node name="Pause Menu" parent="Player/Camera2D" instance=ExtResource("6_xtlh3")]
 visible = false
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 3.0
+offset_bottom = 8.0
+grow_horizontal = 1
+
+[node name="Pause" type="Button" parent="Player/Camera2D"]
+offset_left = 174.0
+offset_top = -114.0
+offset_right = 217.0
+offset_bottom = -83.0
+size_flags_vertical = 0
+focus_mode = 0
+text = " "
+icon = ExtResource("9_8wort")
+flat = true
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_a3s8p")
@@ -234,3 +247,6 @@ texture = ExtResource("6_wxd4q")
 position = Vector2(445, 261)
 scale = Vector2(0.877431, 1.45)
 texture = ExtResource("6_wxd4q")
+
+[connection signal="button_up" from="Player/Camera2D/Pause" to="." method="_on_pause_button_up"]
+[connection signal="pressed" from="Player/Camera2D/Pause" to="." method="_on_pause_pressed"]
