@@ -112,8 +112,8 @@ zoom = Vector2(2.75, 2.75)
 [node name="Settings" parent="Player/Camera2D" instance=ExtResource("7_j7oni")]
 offset_left = 158.0
 offset_top = -111.0
-offset_right = 202.0
-offset_bottom = -67.0
+offset_right = 185.0
+offset_bottom = -81.0
 size_flags_horizontal = 8
 
 [node name="Window" parent="Player/Camera2D" instance=ExtResource("8_hc6gr")]
