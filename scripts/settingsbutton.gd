@@ -1,5 +1,4 @@
 extends Button
-@onready var window = $"../Window"
 
 
 

@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gxvn73yvhmp6"]
+[gd_scene load_steps=3 format=3 uid="uid://gxvn73yvhmp6"]
 
 [ext_resource type="Texture2D" uid="uid://cnnxb3jcyttvt" path="res://assets/sprites/MenuBackground.png" id="1_53qj0"]
-[ext_resource type="PackedScene" uid="uid://c4sl3knn10jdv" path="res://Slungeon Scenes/settingsbutton.tscn" id="2_lo48k"]
-[ext_resource type="PackedScene" uid="uid://wt78sidbgh73" path="res://Slungeon Scenes/SettingsWindow.tscn" id="3_qbs12"]
 
 [sub_resource type="GDScript" id="GDScript_y1inm"]
 script/source = "extends Control
-@onready var window = $Window
 
 
 
@@ -60,18 +57,6 @@ text = "
 "
 flat = true
 
-[node name="Settings" parent="." instance=ExtResource("2_lo48k")]
-layout_mode = 0
-offset_left = 521.0
-offset_top = -310.0
-offset_right = 565.0
-offset_bottom = -266.0
-
-[node name="Window" parent="." instance=ExtResource("3_qbs12")]
-visible = false
-
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
-[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
-[connection signal="close_requested" from="Window" to="Settings" method="_on_window_close_requested"]
