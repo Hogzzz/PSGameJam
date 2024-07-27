@@ -1,7 +1,7 @@
 extends Node2D
-
-var paused = false
+@onready var button = $Player/Camera2D/Button
 @onready var pause_menu = $"Player/Camera2D/Pause Menu"
+var paused = false
 
 func _on_button_pressed():
 	if paused:
@@ -11,3 +11,4 @@ func _on_button_pressed():
 		pause_menu.show()
 		Engine.time_scale = 0
 	paused = !paused
+

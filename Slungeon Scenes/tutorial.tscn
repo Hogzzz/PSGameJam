@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkdhgfln7tqkf"]
+[gd_scene load_steps=14 format=3 uid="uid://dkdhgfln7tqkf"]
 
 [ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_456m3"]
 [ext_resource type="Texture2D" uid="uid://dbj5dcig3i6gh" path="res://assets/sprites/FloorTiles.png" id="1_jks4h"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bcgnjswiu8usd" path="res://assets/sounds/footstep.wav" id="3_a3s8p"]
 [ext_resource type="Texture2D" uid="uid://bmu8yo2m67kk0" path="res://assets/sprites/SettingsButton.png" id="3_nd8yf"]
 [ext_resource type="PackedScene" uid="uid://cfc5o8tfatej8" path="res://Slungeon Scenes/killzone.tscn" id="4_i0g7m"]
+[ext_resource type="PackedScene" uid="uid://dhtjh7smfumsm" path="res://Slungeon Scenes/pause_menu.tscn" id="5_pcosp"]
 [ext_resource type="Texture2D" uid="uid://dsq754f46kprw" path="res://assets/sprites/BackgroundMoon.png" id="5_yx0g4"]
 [ext_resource type="Texture2D" uid="uid://cd2rxfm2j3os" path="res://assets/sprites/BackgroundPillars.png" id="6_wxd4q"]
 
@@ -77,19 +78,6 @@ sources/0 = SubResource("TileSetAtlasSource_gqxcf")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3babj"]
 
-[sub_resource type="Gradient" id="Gradient_kojlf"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pns7o"]
-gradient = SubResource("Gradient_kojlf")
-fill_from = Vector2(0.183486, 0.811927)
-
-[sub_resource type="Gradient" id="Gradient_ktmtm"]
-offsets = PackedFloat32Array(0, 0.012987)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bxvpx"]
-gradient = SubResource("Gradient_ktmtm")
-fill_from = Vector2(0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_3mf7m"]
 
 [node name="Node2D" type="Node2D"]
@@ -119,6 +107,20 @@ focus_mode = 0
 icon = ExtResource("3_nd8yf")
 flat = true
 
+[node name="Pause Menu" parent="Player/Camera2D" instance=ExtResource("5_pcosp")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -96.0
+offset_right = -17.0
+offset_bottom = -96.0
+scale = Vector2(0.375, 0.375)
+pivot_offset = Vector2(15.9257, 95.1852)
+
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_a3s8p")
 volume_db = 2.0
@@ -129,30 +131,6 @@ position = Vector2(4, 749)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(8, 307)
 shape = SubResource("WorldBoundaryShape2D_3babj")
-
-[node name="Lights" type="Node" parent="."]
-
-[node name="PointLight2D" type="PointLight2D" parent="Lights"]
-position = Vector2(336, -11)
-rotation = -0.836498
-texture = SubResource("GradientTexture2D_pns7o")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
-position = Vector2(740, 129)
-rotation = -0.716687
-texture = SubResource("GradientTexture2D_pns7o")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
-position = Vector2(933, 118)
-rotation = -1.5646
-scale = Vector2(11.1246, 1.59237)
-texture = SubResource("GradientTexture2D_pns7o")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
-position = Vector2(336, -125)
-rotation = -1.56421
-scale = Vector2(2.902, 0.640007)
-texture = SubResource("GradientTexture2D_bxvpx")
 
 [node name="Labels" type="Node" parent="."]
 
