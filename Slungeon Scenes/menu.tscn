@@ -54,5 +54,5 @@ text = "
 flat = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
